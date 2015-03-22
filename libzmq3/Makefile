@@ -1,11 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libzmq3
-PKG_VERSION:=4.0.4
+PKG_VERSION:=3.2.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=zeromq-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://download.zeromq.org/
+PKG_BUILD_DIR:=$(BUILD_DIR)/zeromq-$(PKG_VERSION)
+PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -27,14 +29,6 @@ define Package/libzmq3/description
   multiple transport protocols and more.
 
   This package contains the libzmq shared library.
-endef
-
-define Build/Configure
-	$(call Build/Configure/Default)
-endef
-
-define Build/Compile
-	$(call Build/Compile/Default)
 endef
 
 define Build/InstallDev
